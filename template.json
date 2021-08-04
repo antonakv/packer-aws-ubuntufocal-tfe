@@ -2,7 +2,7 @@
   "builders": [
     {
       "type": "amazon-ebs",
-      "ami_name": "packer-aws-ubuntufocal",
+      "ami_name": "packer-aws-ubuntufocal-airgap",
       "ssh_username": "ubuntu",
       "instance_type": "t2.small",
       "source_ami_filter": {

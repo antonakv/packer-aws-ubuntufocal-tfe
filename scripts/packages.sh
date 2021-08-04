@@ -10,7 +10,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -y ${APTARGS}
 
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y ${APTARGS} \
 	git vim curl wget tar  software-properties-common  \
-	htop sysstat unattended-upgrades gpg-agent apt-transport-https \
+	htop unattended-upgrades gpg-agent apt-transport-https \
     ca-certificates thin-provisioning-tools
 
 sudo unattended-upgrades -v
@@ -23,3 +23,5 @@ sudo echo \
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y update ${APTARGS}
 
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y install docker-ce=5:19.03.10~3-0~ubuntu-focal docker-ce-cli=5:19.03.10~3-0~ubuntu-focal containerd.io ${APTARGS}
+
+curl -o latest.tar.gz https://install.terraform.io/airgap/latest.tar.gz
