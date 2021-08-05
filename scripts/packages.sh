@@ -23,5 +23,11 @@ sudo echo \
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y update ${APTARGS}
 
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y install docker-ce=5:19.03.10~3-0~ubuntu-focal docker-ce-cli=5:19.03.10~3-0~ubuntu-focal containerd.io ${APTARGS}
+mkdir airgap
+cd airgap
+wget https://install.terraform.io/airgap/latest.tar.gz
+tar -xf latest.tar.gz
 
-curl -o latest.tar.gz https://install.terraform.io/airgap/latest.tar.gz
+IPADDR=$(hostname -I | awk '{print $1}')
+
+sudo ./install.sh no-proxy private-address=$IPADDR public-address=$IPADDR
