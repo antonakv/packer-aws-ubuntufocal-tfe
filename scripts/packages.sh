@@ -8,10 +8,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get update ${APTARGS}
 
 sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -y ${APTARGS}
 
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y ${APTARGS} \
-	git vim curl wget tar  software-properties-common  \
-	htop unattended-upgrades gpg-agent apt-transport-https \
-    ca-certificates thin-provisioning-tools
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y ${APTARGS} cloud-utils ctop htop git vim curl wget tar software-properties-common htop unattended-upgrades gpg-agent apt-transport-https ca-certificates thin-provisioning-tools 
 
 sudo unattended-upgrades -v
 
@@ -22,12 +19,5 @@ sudo echo \
 
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y update ${APTARGS}
 
-sudo DEBIAN_FRONTEND=noninteractive apt-get -y install docker-ce=5:19.03.10~3-0~ubuntu-focal docker-ce-cli=5:19.03.10~3-0~ubuntu-focal containerd.io ${APTARGS}
-mkdir airgap
-cd airgap
-wget https://install.terraform.io/airgap/latest.tar.gz
-tar -xf latest.tar.gz
-
-IPADDR=$(hostname -I | awk '{print $1}')
-
-sudo ./install.sh no-proxy private-address=$IPADDR public-address=$IPADDR
+sudo DEBIAN_FRONTEND=noninteractive apt-get -y install docker-ce=5:20.10.7~3-0~ubuntu-focal docker-ce-cli=5:20.10.7~3-0~ubuntu-focal containerd.io awscli ${APTARGS}
+# sudo DEBIAN_FRONTEND=noninteractive apt-get -y install containerd.io awscli ${APTARGS}
