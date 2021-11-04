@@ -8,7 +8,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get update ${APTARGS}
 
 sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -y ${APTARGS}
 
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y ${APTARGS} cloud-utils ctop htop git vim curl wget tar software-properties-common htop unattended-upgrades gpg-agent apt-transport-https ca-certificates thin-provisioning-tools 
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y ${APTARGS} cloud-utils ctop htop git vim curl wget tar software-properties-common htop unattended-upgrades gpg-agent apt-transport-https ca-certificates thin-provisioning-tools net-tools 
 
 sudo unattended-upgrades -v
 
