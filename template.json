@@ -2,9 +2,9 @@
   "builders": [
     {
       "type": "amazon-ebs",
-      "ami_name": "packer-aws-ubuntufocal-airgap-1",
+      "ami_name": "packer-aws-ubuntufocal-airgap-2",
       "ssh_username": "ubuntu",
-      "instance_type": "t2.small",
+      "instance_type": "t3.large",
       "launch_block_device_mappings": [
         {
           "device_name": "/dev/sda1",          
