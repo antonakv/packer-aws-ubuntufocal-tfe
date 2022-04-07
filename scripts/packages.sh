@@ -19,5 +19,13 @@ sudo echo \
 
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y update ${APTARGS}
 
-sudo DEBIAN_FRONTEND=noninteractive apt-get -y install docker-ce=5:20.10.7~3-0~ubuntu-focal docker-ce-cli=5:20.10.7~3-0~ubuntu-focal containerd.io awscli jq neovim ${APTARGS}
+sudo DEBIAN_FRONTEND=noninteractive apt-get -y install docker-ce=5:20.10.7~3-0~ubuntu-focal docker-ce-cli=5:20.10.7~3-0~ubuntu-focal containerd.io awscli jq neovim unzip ${APTARGS}
 # sudo DEBIAN_FRONTEND=noninteractive apt-get -y install containerd.io awscli ${APTARGS}
+
+sudo curl -fsSL https://releases.hashicorp.com/terraform/1.1.7/terraform_1.1.7_linux_amd64.zip --output /tmp/terraform_1.1.7_linux_amd64.zip
+
+cd /tmp
+
+sudo unzip /tmp/terraform_1.1.7_linux_amd64.zip -d /tmp
+
+sudo mv /tmp/terraform /usr/local/bin

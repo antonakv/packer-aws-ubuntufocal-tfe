@@ -2,7 +2,7 @@
   "builders": [
     {
       "type": "amazon-ebs",
-      "ami_name": "packer-aws-ubuntufocal-airgap-4",
+      "ami_name": "packer-aws-ubuntufocal-airgap-5",
       "ssh_username": "ubuntu",
       "instance_type": "t3.large",
       "launch_block_device_mappings": [
@@ -29,7 +29,8 @@
       "scripts": ["scripts/packages.sh"
       ],
       "timeout": "10m",
-      "type": "shell"
+      "type": "shell",
+      "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E {{ .Path }}"
     }
   ]
 }
