@@ -2,7 +2,7 @@
   "builders": [
     {
       "type": "amazon-ebs",
-      "ami_name": "packer-aws-ubuntufocal-airgap-5",
+      "ami_name": "packer-aws-ubuntufocal-6",
       "ssh_username": "ubuntu",
       "instance_type": "t3.large",
       "launch_block_device_mappings": [
