@@ -19,4 +19,4 @@ sudo echo \
 
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y update ${APTARGS}
 
-sudo DEBIAN_FRONTEND=noninteractive apt-get -y install docker-ce docker-ce-cli containerd.io awscli jq neovim unzip ${APTARGS}
+sudo DEBIAN_FRONTEND=noninteractive apt-get -y install docker-ce=5:20.10.7~3-0~ubuntu-focal docker-ce-cli=5:20.10.7~3-0~ubuntu-focal containerd.io awscli jq neovim unzip ${APTARGS}
