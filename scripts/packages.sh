@@ -10,7 +10,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get --assume-yes update ${APTARGS}
 
 sudo DEBIAN_FRONTEND=noninteractive apt-get --assume-yes upgrade ${APTARGS}
 
-sudo DEBIAN_FRONTEND=noninteractive apt-get install --assume-yes ${APTARGS} net-tools htop git vim curl wget tar software-properties-common htop unattended-upgrades gpg-agent apt-transport-https ca-certificates thin-provisioning-tools
+sudo DEBIAN_FRONTEND=noninteractive apt-get install --assume-yes ${APTARGS} htop git vim curl wget tar software-properties-common htop unattended-upgrades gpg-agent apt-transport-https ca-certificates thin-provisioning-tools
 
 sudo unattended-upgrades -v
 
@@ -19,7 +19,7 @@ sudo echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.
 
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y update ${APTARGS}
 
-sudo DEBIAN_FRONTEND=noninteractive apt-get -y install docker-ce=5:20.10.7~3-0~ubuntu-focal docker-ce-cli=5:20.10.7~3-0~ubuntu-focal containerd.io awscli jq neovim unzip ${APTARGS}
+sudo DEBIAN_FRONTEND=noninteractive apt-get -y install net-tools docker-ce=5:20.10.7~3-0~ubuntu-focal docker-ce-cli=5:20.10.7~3-0~ubuntu-focal containerd.io awscli jq neovim unzip ${APTARGS}
 
 curl -s https://packagecloud.io/install/repositories/netdata/netdata/script.deb.sh | sudo DEBIAN_FRONTEND=noninteractive bash
 
