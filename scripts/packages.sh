@@ -2,6 +2,8 @@
 
 set -euo pipefail
 
+replicated_url="https://s3.amazonaws.com/replicated-airgap-work/replicated.tar.gz"
+
 export APTARGS="-qq -o=Dpkg::Use-Pty=0"
 export DEBIAN_FRONTEND=noninteractive
 
@@ -27,3 +29,13 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get --assume-yes update ${APTARGS}
 sudo DEBIAN_FRONTEND=noninteractive apt-get --assume-yes install netdata ${APTARGS}
 
 sudo systemctl enable netdata.service
+
+sudo mkdir -p /etc/replicated
+
+echo "$(date +"%T_%F") Downloading replicated"
+
+sudo curl --output /etc/replicated/replicated.tar.gz "$replicated_url"
+
+echo "$(date +"%T_%F") Extracting replicated"
+
+sudo tar --directory /etc/replicated --extract --file /etc/replicated/replicated.tar.gz
