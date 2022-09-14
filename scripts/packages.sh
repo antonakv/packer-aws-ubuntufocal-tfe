@@ -19,13 +19,11 @@ sudo echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.
 
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y update ${APTARGS}
 
-sudo DEBIAN_FRONTEND=noninteractive apt-get -y install net-tools docker-ce=5:20.10.7~3-0~ubuntu-focal docker-ce-cli=5:20.10.7~3-0~ubuntu-focal containerd.io awscli jq neovim unzip ${APTARGS}
+sudo DEBIAN_FRONTEND=noninteractive apt-get -y install net-tools docker-ce=5:20.10.9~3-0~ubuntu-focal docker-ce-cli=5:20.10.9~3-0~ubuntu-focal containerd.io awscli jq neovim unzip ${APTARGS}
 
 curl -s https://packagecloud.io/install/repositories/netdata/netdata/script.deb.sh | sudo DEBIAN_FRONTEND=noninteractive bash
 
 sudo DEBIAN_FRONTEND=noninteractive apt-get --assume-yes update ${APTARGS}
 sudo DEBIAN_FRONTEND=noninteractive apt-get --assume-yes install netdata ${APTARGS}
-sudo sed -i -e 's/localhost/0.0.0.0/g' /etc/netdata/netdata.conf
-sudo sed -i -e 's/\[global\]/\[global\]\n    update every = 2/' /etc/netdata/netdata.conf
 
 sudo systemctl enable netdata.service
