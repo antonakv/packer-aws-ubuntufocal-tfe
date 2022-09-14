@@ -8,7 +8,7 @@ packer {
 }
 
 source "amazon-ebs" "ubuntu" {
-  ami_name      = "packer-aws-ubuntufocal-17"
+  ami_name      = "packer-aws-ubuntufocal-tfe-20"
   instance_type = "t3.large"
   region        = "eu-central-1"
   source_ami_filter {

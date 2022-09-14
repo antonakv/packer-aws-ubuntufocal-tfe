@@ -23,7 +23,9 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get -y update ${APTARGS}
 
 #sudo DEBIAN_FRONTEND=noninteractive apt-get -y install net-tools docker-ce=5:20.10.9~3-0~ubuntu-focal docker-ce-cli=5:20.10.9~3-0~ubuntu-focal containerd.io awscli jq neovim unzip ${APTARGS}
 
-sudo DEBIAN_FRONTEND=noninteractive apt-get -y install net-tools containerd.io awscli jq neovim unzip ${APTARGS}
+#sudo DEBIAN_FRONTEND=noninteractive apt-get -y install net-tools containerd.io awscli jq neovim unzip ${APTARGS}
+
+sudo DEBIAN_FRONTEND=noninteractive apt-get -y install net-tools containerd libseccomp2 awscli jq neovim unzip ${APTARGS}
 
 curl -s https://packagecloud.io/install/repositories/netdata/netdata/script.deb.sh | sudo DEBIAN_FRONTEND=noninteractive bash
 
@@ -41,3 +43,11 @@ sudo curl --output /etc/replicated/replicated.tar.gz "$replicated_url"
 echo "$(date +"%T_%F") Extracting replicated"
 
 sudo tar --directory /etc/replicated --extract --file /etc/replicated/replicated.tar.gz
+
+echo "$(date +"%T_%F") containerd version"
+
+containerd --version
+
+echo "$(date +"%T_%F") runc version"
+
+runc --version
