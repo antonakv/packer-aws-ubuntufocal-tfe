@@ -30,6 +30,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get -y install net-tools containerd libs
 curl -s https://packagecloud.io/install/repositories/netdata/netdata/script.deb.sh | sudo DEBIAN_FRONTEND=noninteractive bash
 
 sudo DEBIAN_FRONTEND=noninteractive apt-get --assume-yes update ${APTARGS}
+sudo DEBIAN_FRONTEND=noninteractive apt-get --assume-yes upgrade ${APTARGS}
 sudo DEBIAN_FRONTEND=noninteractive apt-get --assume-yes install netdata ${APTARGS}
 
 sudo systemctl enable netdata.service
