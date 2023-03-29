@@ -8,7 +8,7 @@ packer {
 }
 
 source "amazon-ebs" "ubuntu" {
-  ami_name      = "packer-aws-ubuntufocal-tfe-23"
+  ami_name      = "packer-aws-ubuntufocal-tfe-24"
   instance_type = "t3.large"
   region        = "eu-central-1"
   source_ami_filter {
@@ -18,7 +18,7 @@ source "amazon-ebs" "ubuntu" {
       virtualization-type = "hvm"
     }
     most_recent = true
-    owners      = ["099720109477"]
+    owners      = ["679593333241"] # Cannonical Limited ltd.
   }
   ssh_username = "ubuntu"
 }
@@ -30,6 +30,7 @@ build {
   ]
 
   provisioner "shell" {
+    execute_command = "sudo -S env {{ .Vars }} {{ .Path }}"
     script = "scripts/packages.sh"
   }
 }
